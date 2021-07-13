@@ -11,7 +11,7 @@ more_results = soup.find("div", class_="afe4286c")
 negative_words = ["killed", "died", "loss", "threat", "harmful", "worse", "dead"]
 positive_words = ["won", "succeeded", "celebration",
                   "good", "fun", "happy", "solution",
-                  "success", "better", "makeover", "vaccine"]
+                  "success", "better", "makeover", "vaccine", "civil rights", "survivors"]
 food_words = ["food", "hunger", "cook", "cooking", "rare", "superfood", "diet"]
 
 negative_word_count = 0
