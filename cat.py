@@ -6,8 +6,8 @@ from pygame.sprite import Sprite
 class Cat(Sprite):
 
     health = 100
-    happiness = int(file_worker.load_data())
-    hunger_level = 100
+    happiness = int(file_worker.load_mood_data())
+    hunger_level = int(file_worker.load_food_data())
 
     def __init__(self, cat_vector, cat_sprite):
         self.cat_vector = cat_vector

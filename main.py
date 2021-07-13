@@ -23,14 +23,17 @@ white = (255, 255, 255)
 
 exec("web_worker")
 
-cat1.happiness += web_worker.get_data()
+cat1.happiness += web_worker.get_mental_health_data()
+cat1.hunger_level -= web_worker.get_food_data()
+
+if cat1.happiness < 0:
+    cat1.happiness = 0
 
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
         if event.type == pygame.MOUSEBUTTONUP:
             cat1.meow()
             if cat1.happiness < 100:
@@ -54,5 +57,6 @@ while running:
 
     pygame.display.flip()
 
-file_worker.write_data(str(cat1.happiness))
+file_worker.write_food_data(str(cat1.hunger_level))
+file_worker.write_mood_data(str(cat1.happiness))
 pygame.quit()

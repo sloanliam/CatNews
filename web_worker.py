@@ -8,13 +8,15 @@ soup = BeautifulSoup(page.content, "html.parser")
 results = soup.find(id="mount")
 more_results = soup.find("div", class_="afe4286c")
 
-negative_words = ["killed", "died", "loss", "threat", "harmful", "worse"]
+negative_words = ["killed", "died", "loss", "threat", "harmful", "worse", "dead"]
 positive_words = ["won", "succeeded", "celebration",
                   "good", "fun", "happy", "solution",
                   "success", "better", "makeover", "vaccine"]
+food_words = ["food", "hunger", "cook", "cooking", "rare", "superfood", "diet"]
 
 negative_word_count = 0
 positive_word_count = 0
+food_word_count = 0
 word_dict = more_results.text.split()
 
 for word in word_dict:
@@ -26,13 +28,19 @@ for word in word_dict:
         if word == positive_words[p]:
             positive_word_count += 1
             break
+    for f in range(len(food_words)):
+        if word == food_words[f]:
+            food_word_count += 1
 
 
-def get_data():
+def get_mental_health_data():
     return (positive_word_count - negative_word_count) * 10
 
 
-print(word_dict)
+def get_food_data():
+    return food_word_count * 5
+
+
 
 
 
