@@ -17,9 +17,9 @@ white = (255, 255, 255)
 
 initial_text_y = 500 - 60
 font = pygame.font.Font('Occams Eraser.ttf', 32)
-health_text = font.render("health " + str(cat.health), True, black, white)
-happiness_text = font.render("happiness " + str(cat.happiness), True, black, white)
-hunger_text = font.render("hunger " + str(cat.hunger_level), True, black, white)
+health_text = font.render("health " + str(cat1.health), True, black, white)
+happiness_text = font.render("happiness " + str(cat1.happiness), True, black, white)
+hunger_text = font.render("hunger " + str(cat1.hunger_level), True, black, white)
 
 running = True
 while running:
