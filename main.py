@@ -11,7 +11,7 @@ screen_y = 500
 ticks = 0
 
 screen = pygame.display.set_mode([screen_x, screen_y])
-pygame.display.set_caption("Cat Game")
+pygame.display.set_caption("Cat News")
 
 cat_x = 175
 cat_y = 100
