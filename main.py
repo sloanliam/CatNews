@@ -21,6 +21,8 @@ cat1 = Cat(cat_sprite='assets/cat.png', cat_vector=(cat_x, cat_y))
 black = (0, 0, 0)
 white = (255, 255, 255)
 
+target_one = cat_y + 50
+
 ov_text = ""
 
 exec("web_worker")
@@ -63,10 +65,13 @@ while running:
     if cat1.hunger_level > 100:
         cat1.hunger_level = 100
 
+    if cat1.happiness > 100:
+        cat1.happiness = 100
+
     if 80 < cat1.happiness < 100:
-        ov_text = "Youre cat is happy!"
+        ov_text = "Your cat is happy!"
     elif 70 < cat1.happiness < 80:
-        ov_text = "Youre cat is feeling pretty good"
+        ov_text = "Your cat is feeling pretty good"
     elif 60 < cat1.happiness < 70:
         ov_text = "Your cat is alright"
     elif 55 < cat1.happiness < 60:
@@ -79,6 +84,9 @@ while running:
         ov_text = "Your cat is in bad shape, she needs petting"
     elif cat1.happiness == 0:
         ov_text = "Your cat doesn't want to see humans right now :("
+
+    if cat_y < target_one:
+        cat_y += 0.3
 
     screen.fill((255, 255, 255))
     screen.blit(cat1.cat_sprite, (cat_x, cat_y))

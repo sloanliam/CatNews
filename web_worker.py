@@ -34,11 +34,11 @@ for word in word_dict:
 
 
 def get_mental_health_data():
-    return (positive_word_count - negative_word_count) * 10
+    return (positive_word_count - negative_word_count) * 3
 
 
 def get_food_data():
-    return food_word_count * 5
+    return food_word_count * 3
 
 
 
