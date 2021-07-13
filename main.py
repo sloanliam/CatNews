@@ -1,5 +1,8 @@
 import pygame
+import web_worker
+import file_worker
 from cat import Cat
+
 pygame.init()
 
 screen_x = 500
@@ -13,10 +16,14 @@ pygame.display.set_caption("Cat Game")
 cat_x = 175
 cat_y = 100
 
-cat1 = Cat(cat_sprite='cat.png', cat_vector=(cat_x, cat_y))
+cat1 = Cat(cat_sprite='assets/cat.png', cat_vector=(cat_x, cat_y))
 
 black = (0, 0, 0)
 white = (255, 255, 255)
+
+exec("web_worker")
+
+cat1.happiness += web_worker.get_data()
 
 running = True
 while running:
@@ -30,7 +37,7 @@ while running:
                 cat1.happiness += 1
 
     initial_text_y = 500 - 60
-    font = pygame.font.Font('Occams Eraser.ttf', 32)
+    font = pygame.font.Font('assets/Occams Eraser.ttf', 32)
     health_text = font.render("health " + str(cat1.health), True, black, white)
     happiness_text = font.render("happiness " + str(cat1.happiness), True, black, white)
     hunger_text = font.render("hunger " + str(cat1.hunger_level), True, black, white)
@@ -47,4 +54,5 @@ while running:
 
     pygame.display.flip()
 
+file_worker.write_data(str(cat1.happiness))
 pygame.quit()

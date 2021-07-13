@@ -8,8 +8,10 @@ soup = BeautifulSoup(page.content, "html.parser")
 results = soup.find(id="mount")
 more_results = soup.find("div", class_="afe4286c")
 
-negative_words = ["killed", "died", "loss", "threat", "harmful", "bad"]
-positive_words = ["won", "succeeded", "celebration", "good", "fun", "happy"]
+negative_words = ["killed", "died", "loss", "threat", "harmful", "worse"]
+positive_words = ["won", "succeeded", "celebration",
+                  "good", "fun", "happy", "solution",
+                  "success", "better", "makeover", "vaccine"]
 
 negative_word_count = 0
 positive_word_count = 0
@@ -24,4 +26,13 @@ for word in word_dict:
         if word == positive_words[p]:
             positive_word_count += 1
             break
+
+
+def get_data():
+    return (positive_word_count - negative_word_count) * 10
+
+
+print(word_dict)
+
+
 
