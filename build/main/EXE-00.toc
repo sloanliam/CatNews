@@ -58,7 +58,7 @@
  [],
  False,
  False,
- 1626212694,
+ 1626213266,
  [('run',
    '/Users/liam/PycharmProjects/PyCat1/venv/lib/python3.9/site-packages/PyInstaller/bootloader/Darwin-64bit/run',
    'EXECUTABLE')])

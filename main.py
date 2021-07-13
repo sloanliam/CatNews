@@ -43,7 +43,7 @@ while running:
             running = False
         if event.type == pygame.MOUSEBUTTONUP:
             clicks += 1
-            if clicks == 11:
+            if clicks == 30:
                 clicks = 0
             if clicks == 10:
                 cat1.meow()
